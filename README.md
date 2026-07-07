@@ -18,13 +18,13 @@ Proyecto hecho con mismo stack visual que el sitio principal:
 ## Requisitos
 
 - Node.js 20+
-- npm 10+
+- pnpm 11+
 
 ## Desarrollo local
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Abre [http://localhost:3000](http://localhost:3000).
@@ -32,8 +32,8 @@ Abre [http://localhost:3000](http://localhost:3000).
 ## Build de produccion
 
 ```bash
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
 ## Personalizacion rapida
@@ -69,8 +69,7 @@ Opciones:
 2. O via CLI:
 
 ```bash
-npm i -g vercel
-vercel
+pnpm dlx vercel
 ```
 
 No necesita backend ni variables de entorno para funcionar base.

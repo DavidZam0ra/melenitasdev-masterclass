@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 
 const buttonVariants = cva(
-    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 transition-all duration-300',
+    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-mono uppercase tracking-wide text-sm font-medium focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 transition-all duration-300',
     {
         variants: {
             variant: {
                 primary:
-                    'flex items-center w-fit cursor-pointer border border-white/20 bg-primary/50 hover:bg-primaryhg/60',
+                    'flex items-center w-fit cursor-pointer border border-primary bg-primary hover:bg-primaryhg text-ink',
                 secondary:
-                    'flex items-center w-fit cursor-pointer border border-white/20 bg-white/10 hover:bg-white/20',
+                    'flex items-center w-fit cursor-pointer border border-bone/20 bg-transparent hover:bg-bone/10',
                 ghost: 'flex items-center w-fit cursor-pointer hover:bg-white/10',
                 danger: 'flex items-center w-fit cursor-pointer border border-white/20 bg-white/10 hover:bg-white/20 text-primary',
             },

@@ -4,24 +4,27 @@ import { Button } from '@/app/components/button';
 import NavBar from '@/app/components/navbar';
 import { motion } from 'framer-motion';
 
+const BUNNY_VIDEO_EMBED_URL =
+    'https://iframe.mediadelivery.net/embed/699191/782ef2fc-1ffe-4099-a3c7-e5b5a3f4e16a?autoplay=false&preload=true';
+
+const MELENITAS_POSE =
+    'https://melenitas.dev/wp-content/uploads/2023/11/Pose-Transparente-e1700313244524.png';
+
 const SOCIAL_LINKS = [
     {
         label: 'YouTube',
         url: 'https://youtube.com/@melenitasdev',
         icon: <Youtube className="h-5 w-5" />,
-        color: 'hover:text-red-500 hover:border-red-500/30',
     },
     {
         label: 'Instagram',
         url: 'https://instagram.com/melenitasdev',
         icon: <Instagram className="h-5 w-5" />,
-        color: 'hover:text-pink-500 hover:border-pink-500/30',
     },
     {
         label: 'Twitch',
         url: 'https://www.twitch.tv/melenitasdev',
         icon: <Twitch className="h-5 w-5" />,
-        color: 'hover:text-purple-400 hover:border-purple-400/30',
     },
 ];
 
@@ -36,15 +39,22 @@ const FADE_UP = {
 
 export default function LeadMagnetPage() {
     return (
-        <div className="min-h-screen bg-[#09090b] text-white selection:bg-primary/30">
+        <div className="min-h-screen bg-ink text-bone selection:bg-primary/30 font-sans">
             <NavBar />
 
             {/* ── HERO ─────────────────────────────────────────────── */}
             <section className="relative pt-32 pb-20 px-6 overflow-hidden">
                 {/* Grid background */}
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(100,100,100,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,100,0.07)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_20%,#000_50%,transparent_100%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(229,76,76,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(229,76,76,0.06)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_20%,#000_50%,transparent_100%)]" />
                 {/* Glow */}
                 <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
+                {/* Corner glyphs */}
+                <div className="pointer-events-none hidden md:block absolute top-24 left-8 font-mono text-primary/20 text-sm select-none">
+                    {'>_ { } //'}
+                </div>
+                <div className="pointer-events-none hidden md:block absolute bottom-8 right-8 font-mono text-primary/20 text-sm select-none">
+                    {'( ) => [ ]'}
+                </div>
 
                 <div className="relative max-w-4xl mx-auto text-center space-y-8 z-10">
                     {/* Badge */}
@@ -53,40 +63,38 @@ export default function LeadMagnetPage() {
                         initial="hidden"
                         animate="show"
                         custom={0}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primaryhg/20 text-rose-400 text-sm font-semibold backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary/10 border border-primary/30 text-primary text-xs font-mono uppercase tracking-widest backdrop-blur-sm"
                     >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
                         </span>
-                        Recurso gratuito
+                        {'// vídeo gratuito · 15 min'}
                     </motion.div>
 
-                    {/* Title — placeholder, rellenar después */}
                     <motion.h1
                         variants={FADE_UP}
                         initial="hidden"
                         animate="show"
                         custom={1}
-                        className="text-5xl md:text-7xl font-bold leading-tight tracking-tight"
+                        className="text-4xl md:text-6xl font-bold leading-tight tracking-tight"
                     >
-                        Aprende a crear{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-300">
-                            videojuegos
-                        </span>{' '}
-                        desde cero
+                        5 señales de que tu código{' '}
+                        <span className="text-primary">se va a convertir en un infierno</span>
+                        <span className="cursor-blink text-primary">_</span>
                     </motion.h1>
 
-                    {/* Description — placeholder, rellenar después */}
                     <motion.p
                         variants={FADE_UP}
                         initial="hidden"
                         animate="show"
                         custom={2}
-                        className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-xl text-bone/60 max-w-2xl mx-auto leading-relaxed"
                     >
-                        En esta guía gratuita descubrirás el camino real para convertirte en game developer profesional:
-                        qué aprender, en qué orden y cómo construir proyectos que impresionen a cualquier estudio.
+                        Si te suena familiar alguna de estas 5 señales, tu código necesita ayuda urgente.
+                        En esta clase aprenderás a detectarlas y solucionarlas con código limpio
+                        antes de que tu proyecto de videojuegos crezca — y esto te ayudará a programar
+                        más rápido, con más seguridad y a abrirte puertas en el sector profesional.
                     </motion.p>
 
                     {/* CTA */}
@@ -119,7 +127,7 @@ export default function LeadMagnetPage() {
             </section>
 
             {/* ── VIDEO ────────────────────────────────────────────── */}
-            <section id="video" className="py-20 px-6 bg-[#0c0c0e]">
+            <section id="video" className="py-20 px-6 bg-black/40 border-y border-[#27272a]">
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -128,29 +136,46 @@ export default function LeadMagnetPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-10 space-y-3"
                     >
+                        <p className="font-mono text-xs uppercase tracking-widest text-primary">
+                            {'> video'}
+                        </p>
                         <h2 className="text-3xl md:text-4xl font-bold">
-                            El vídeo que necesitabas ver
+                            Detecta y soluciona las señales antes de que sea tarde
                         </h2>
-                        <p className="text-gray-400 text-lg">
-                            Melenitas Dev te explica todo lo que desearía haber sabido al empezar.
+                        <p className="text-bone/60 text-lg max-w-2xl mx-auto">
+                            En 15 minutos aprenderás a identificar las 5 señales de código problemático
+                            y a solucionarlas con código limpio — antes de que destruyan tu proyecto
+                            de videojuegos.
                         </p>
                     </motion.div>
 
-                    {/* Video embed — reemplaza VIDEO_ID con el ID real de YouTube */}
+                    {/* Video embed — Bunny Stream */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.97 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="relative rounded-2xl overflow-hidden border border-[#27272a] shadow-2xl shadow-primary/10 aspect-video"
+                        className="relative rounded-lg overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10"
                     >
-                        <iframe
-                            className="absolute inset-0 w-full h-full"
-                            src="https://www.youtube.com/embed/VIDEO_ID"
-                            title="Melenitas Dev — Aprende desarrollo de videojuegos"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                        />
+                        {/* Terminal-style title bar */}
+                        <div className="flex items-center gap-2 px-4 py-2.5 bg-[#151515] border-b border-primary/20">
+                            <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-bone/20" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-bone/20" />
+                            <span className="ml-2 font-mono text-xs text-bone/40 truncate">
+                                video.mp4 — melenitasdev
+                            </span>
+                        </div>
+                        <div className="relative aspect-video">
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src={BUNNY_VIDEO_EMBED_URL}
+                                title="5 señales de que tu código se va a convertir en un infierno — Melenitas Dev"
+                                loading="lazy"
+                                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -165,9 +190,12 @@ export default function LeadMagnetPage() {
                         transition={{ duration: 0.5 }}
                         className="space-y-4"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold">Sigue a melenitasdev</h2>
-                        <p className="text-gray-400 text-lg">
-                            Contenido diario sobre game dev, motores y carrera profesional.
+                        <p className="font-mono text-xs uppercase tracking-widest text-primary">
+                            {'// redes'}
+                        </p>
+                        <h2 className="text-3xl md:text-4xl font-bold">Sígueme en redes</h2>
+                        <p className="text-bone/60 text-lg">
+                            Sigue aprendiendo programación de videojuegos, buenas prácticas y cómo impulsar tu carrera profesional.
                         </p>
                     </motion.div>
 
@@ -180,9 +208,13 @@ export default function LeadMagnetPage() {
                         className="flex flex-col items-center gap-4"
                     >
                         <div className="relative">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/60 to-purplecontrast/60 blur-xl scale-110" />
-                            <div className="relative w-24 h-24 rounded-full border-2 border-primary/50 overflow-hidden bg-[#18181b] flex items-center justify-center text-3xl font-bold text-primary">
-                                M
+                            <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl scale-110" />
+                            <div className="relative w-48 h-56 flex items-end justify-center">
+                                <img
+                                    src={MELENITAS_POSE}
+                                    alt="Melenitas Dev"
+                                    className="h-full w-auto object-contain drop-shadow-[0_0_24px_rgba(229,76,76,0.35)]"
+                                />
                             </div>
                         </div>
                         <div>
@@ -203,60 +235,21 @@ export default function LeadMagnetPage() {
                                 whileInView="show"
                                 viewport={{ once: true }}
                                 custom={i}
-                                className={`flex flex-col items-center gap-2 p-4 w-32 rounded-xl border border-[#27272a] bg-[#18181b] text-gray-400 transition-all duration-300 ${s.color} hover:bg-white/5 hover:-translate-y-0.5`}
+                                className="flex flex-col items-center gap-2 p-4 w-32 rounded-md border border-[#27272a] bg-black/30 text-bone/50 transition-all duration-300 hover:text-primary hover:border-primary/40 hover:-translate-y-0.5"
                             >
                                 {s.icon}
-                                <span className="text-xs font-medium">{s.label}</span>
+                                <span className="text-xs font-mono uppercase">{s.label}</span>
                             </motion.a>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA FINAL ────────────────────────────────────────── */}
-            <section className="py-20 px-6 bg-[#0c0c0e]">
-                <div className="max-w-3xl mx-auto text-center space-y-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="space-y-4"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                            ¿Listo para el siguiente nivel?
-                        </h2>
-                        <p className="text-gray-400 text-lg max-w-xl mx-auto">
-                            Únete a la academia y aprende con proyectos reales, mentores de la industria y
-                            una comunidad que te impulsa.
-                        </p>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.15 }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center"
-                    >
-                        {/* <Button
-                            variant="primary"
-                            size="xl"
-                            buttonType="navigation"
-                            navigationUrl="http://localhost:3000"
-                            placeHolder="Empieza tu formación"
-                            icon={<ChevronRight />}
-                            external
-                            className="shadow-primary/20 shadow-[0px_0px_20px_1px]"
-                        /> */}
-                    </motion.div>
-                </div>
-            </section>
-
             {/* ── FOOTER ───────────────────────────────────────────── */}
-            <footer className="py-10 border-t border-[#27272a] px-6">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
-                    <span className="font-bold tracking-tighter uppercase italic text-white/60">
-                        Melenitas Dev
+            <footer className="py-10 border-t border-[#27272a] px-6 font-mono">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-bone/40 text-sm">
+                    <span className="font-bold tracking-tighter text-bone/70">
+                        <span className="text-primary">{'>_'}</span> Melenitas Dev
                     </span>
                     <p>© 2026 Melenitas Dev. Todos los derechos reservados.</p>
                     {/* <a
