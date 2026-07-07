@@ -7,8 +7,13 @@ import { motion } from 'framer-motion';
 const BUNNY_VIDEO_EMBED_URL =
     'https://iframe.mediadelivery.net/embed/699191/782ef2fc-1ffe-4099-a3c7-e5b5a3f4e16a?autoplay=false&preload=true';
 
-const MELENITAS_POSE =
-    'https://melenitas.dev/wp-content/uploads/2023/11/Pose-Transparente-e1700313244524.png';
+const MELENITAS_POSE = '/melenitasdev.png';
+
+const TikTokIcon = () => (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+);
 
 const SOCIAL_LINKS = [
     {
@@ -20,6 +25,11 @@ const SOCIAL_LINKS = [
         label: 'Instagram',
         url: 'https://instagram.com/melenitasdev',
         icon: <Instagram className="h-5 w-5" />,
+    },
+    {
+        label: 'TikTok',
+        url: 'https://www.tiktok.com/@melenitasdev',
+        icon: <TikTokIcon />,
     },
     {
         label: 'Twitch',
@@ -209,11 +219,11 @@ export default function LeadMagnetPage() {
                     >
                         <div className="relative">
                             <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl scale-110" />
-                            <div className="relative w-48 h-56 flex items-end justify-center">
+                            <div className="relative w-52 h-72 flex items-end justify-center">
                                 <img
                                     src={MELENITAS_POSE}
                                     alt="Melenitas Dev"
-                                    className="h-full w-auto object-contain drop-shadow-[0_0_24px_rgba(229,76,76,0.35)]"
+                                    className="h-full w-auto object-contain object-bottom drop-shadow-[0_0_24px_rgba(229,76,76,0.35)]"
                                 />
                             </div>
                         </div>
