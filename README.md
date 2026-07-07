@@ -1,13 +1,14 @@
-# Lead Magnet - Melenitas Dev
+# Melenitas Dev - Masterclass
 
-Landing page simple para promocionar Melenitas Dev con formato lead magnet:
+Landing de la masterclass de Melenitas Dev: *5 señales de que tu código se va a convertir en un infierno*.
 
-- Titulo principal
-- Descripcion corta
-- Video embebido
+Incluye:
+
+- Hero con titulo y descripcion
+- Video embebido (Bunny Stream)
 - Enlaces a redes de `melenitasdev`
 
-Proyecto hecho con mismo stack visual que el sitio principal:
+Stack:
 
 - Next.js 16 (App Router)
 - React 19
@@ -43,11 +44,11 @@ Edita `src/app/page.tsx`:
 1. **Titulo y descripcion**
    - Cambia el contenido del hero principal.
 2. **Video**
-   - Reemplaza `VIDEO_ID` en el iframe por el ID real de YouTube.
+   - Actualiza `BUNNY_VIDEO_EMBED_URL` con la URL de embed de Bunny Stream.
 3. **Redes de melenitasdev**
    - Ajusta URLs dentro de `SOCIAL_LINKS`.
-4. **CTAs**
-   - Cambia enlaces hacia dominio final de la academia.
+4. **Metadata**
+   - Edita titulo y descripcion en `src/app/layout.tsx` para el preview al compartir.
 
 ## Estructura
 
@@ -62,6 +63,8 @@ src/app/
 ```
 
 ## Deploy en Vercel
+
+URL de produccion: [melenitasdev-masterclass.vercel.app](https://melenitasdev-masterclass.vercel.app)
 
 Opciones:
 
